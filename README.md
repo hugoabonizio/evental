@@ -1,6 +1,6 @@
-# evental
+# Evental
 
-TODO: Write a description here for library
+**Evental** is a Crystal shard to easily write event-driven code, using callbacks to handle events.
 
 ## Installation
 
@@ -8,25 +8,28 @@ Add it to `Projectfile`
 
 ```crystal
 deps do
-  github "[your-github-name]/evental"
+  github "hugoabonizio/evental"
 end
 ```
 
 ## Usage
 
+Example of a simple event handler:
+
 ```crystal
 require "evental"
+
+emitter = Evental::Emitter.new
+emitter.on :open do
+  puts "Fake connection opened!"
+end
+emitter.emit :open
+# => Fake connection opened!
 ```
-
-TODO: Write usage here for library
-
-## Development
-
-TODO: Write instructions for development
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/evental/fork )
+1. Fork it ( https://github.com/hugoabonizio/evental/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -34,4 +37,4 @@ TODO: Write instructions for development
 
 ## Contributors
 
-- [your-github-name](https://github.com/[your-github-name]) Hugo Abonizio - creator, maintainer
+- [hugoabonizio](https://github.com/hugoabonizio) Hugo Abonizio - creator, maintainer

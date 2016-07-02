@@ -5,12 +5,12 @@ describe Evental do
     emitter = Evental::Emitter.new
     
     # 1
-    emitter.on(:test) do
+    emitter.on :test do
       "a"
     end
     
     # 2
-    emitter.on(:test) do
+    emitter.on :test do
       "b"
     end
     
@@ -22,11 +22,11 @@ describe Evental do
     control = false
     emitter = Evental::Emitter.new
     
-    emitter.on(:test2) do
+    emitter.on :test2 do
       control = true
     end
     
-    emitter.emit(:test2)
+    emitter.emit :test2
     control.should be_true
   end
 end
